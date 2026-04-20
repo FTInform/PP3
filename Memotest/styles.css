@@ -1,0 +1,76 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f7ff 0%, #f0e6ff 100%);
+        }
+
+        .contenedor {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        #tablero {
+            display: grid;
+            grid-template-columns: repeat(10, 50px);
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(100, 100, 150, 0.1);
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            border: 2px solid #a0b8ff;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #e8f0ff 0%, #f5e6ff 100%);
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(100, 100, 150, 0.2);
+            background: linear-gradient(135deg, #d8e8ff 0%, #f0d8ff 100%);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        #mensaje {
+            color: #333;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        #preview {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
