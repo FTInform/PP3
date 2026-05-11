@@ -1,0 +1,10 @@
+======================
+1) Agregar tabla usuario (ID,CONTRASEÑA,NOMBRE,EMAIL)
+2) Agregar datos
+3) Leer los datos con PHP.
+4) Mostrar resultados.
+======================
+5) Login.
+6) CRUD (Carreras, materia, alumnos, usuarios).
+7) Analitico o trayectoria del alumno (materia, curso, nota y fecha).
+======================
