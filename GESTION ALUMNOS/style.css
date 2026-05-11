@@ -1,0 +1,345 @@
+/* =========================================================
+   VARIABLES Y CONFIGURACIÓN (Apple Dark Palette)
+========================================================= */
+:root {
+    --bg-color: #000000;
+    --glass-bg: rgba(28, 28, 30, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-edge-light: rgba(255, 255, 255, 0.18);
+    --ios-blue: #0A84FF;
+    --ios-red: #FF453A;
+    --text-main: #FFFFFF;
+    --text-muted: #EBEBF599;
+    --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    background-image:
+        radial-gradient(at 0% 0%, rgba(10, 132, 255, 0.12) 0px, transparent 40%),
+        radial-gradient(at 100% 0%, rgba(255, 69, 58, 0.08) 0px, transparent 40%),
+        radial-gradient(at 100% 100%, rgba(10, 132, 255, 0.08) 0px, transparent 40%);
+    background-attachment: fixed;
+    padding: 40px 20px;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================
+   PANELES Y ESTRUCTURA DE CRISTAL
+========================================================= */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(30px) saturate(190%);
+    -webkit-backdrop-filter: blur(30px) saturate(190%);
+    border: 1px solid var(--glass-border);
+    border-top: 1px solid var(--glass-edge-light);
+    border-radius: 24px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-heavy);
+    animation: fadeScale 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.99);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================================
+   REDISEÑO DE BOTONES (EFECTO 3D GLOSSY)
+========================================================= */
+button,
+.primary,
+.btn-login,
+.btn-danger,
+.action-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Botones Azules (Login e Inscribir) */
+.primary,
+.btn-login {
+    background: linear-gradient(180deg, #58A6FF 0%, #0071E3 50%, #005BB7 100%) !important;
+    color: white !important;
+    padding: 12px 24px !important;
+    box-shadow:
+        0 4px 15px rgba(0, 113, 227, 0.35),
+        inset 0 1.5px 0 rgba(255, 255, 255, 0.4) !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.primary:hover,
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 113, 227, 0.5), inset 0 1.5px 0 rgba(255, 255, 255, 0.5) !important;
+    filter: brightness(1.1);
+}
+
+/* Botón Danger (Rojo con relieve) */
+.btn-danger {
+    background: linear-gradient(180deg, #ff6b6b 0%, #ee5253 100%) !important;
+    color: white !important;
+    padding: 8px 16px !important;
+    box-shadow: 0 4px 12px rgba(238, 82, 83, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(180deg, #ff7675 0%, #d63031 100%) !important;
+    transform: scale(1.05);
+}
+
+/* Acción de Clic (Presión física) */
+button:active,
+.primary:active,
+.btn-login:active,
+.action-card:active {
+    transform: scale(0.96) !important;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* =========================================================
+   HOME: WIDGETS Y ACCIONES
+========================================================= */
+.widget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.widget-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 22px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: 0.3s;
+}
+
+.widget-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(10, 132, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.widget-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--ios-blue);
+}
+
+.widget-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.quick-actions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.action-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 14px 24px !important;
+    color: #fff;
+    width: max-content;
+}
+
+/* =========================================================
+   LOGIN: INTERFAZ Y ANIMACIÓN
+========================================================= */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    position: relative;
+}
+
+.login-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(10, 132, 255, 0.3) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: 0;
+    animation: pulseGlow 4s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+.login-box {
+    width: 400px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group svg {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    stroke: var(--text-muted);
+    transition: 0.3s;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: #fff;
+    border-radius: 12px;
+    outline: none;
+}
+
+.input-group:focus-within svg {
+    stroke: var(--ios-blue);
+}
+
+/* =========================================================
+   TABLAS Y FORMULARIOS
+========================================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+th {
+    text-align: left;
+    color: var(--text-muted);
+    padding: 12px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Selects y Options (Arreglo letras blancas) */
+select {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+}
+
+option {
+    color: #000;
+    background: #fff;
+}
+
+.nav-tabs {
+    display: inline-flex;
+    background: rgba(118, 118, 128, 0.24);
+    padding: 4px;
+    border-radius: 14px;
+    margin-bottom: 30px;
+}
+
+.nav-tabs button {
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-tabs a.active-btn button {
+    background: #636366;
+    color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 69, 58, 0.12);
+    color: var(--ios-red);
+    border: 1px solid rgba(255, 69, 58, 0.25);
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 25px;
+}
+
+.paginacion a {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.paginacion a.activa {
+    background: var(--ios-blue);
+    font-weight: bold;
+}
